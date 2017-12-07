@@ -25,7 +25,8 @@ SECRET_KEY = '*t=q8$vvbbzigp-=j2m_t@v$u+mmk@p!#t=ivf3ro2_!_tst*o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# Allow access from any ip
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'coreapi',
     'snippets.apps.SnippetsConfig',
 ]
 
@@ -70,7 +72,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'tutorial.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
@@ -122,6 +123,8 @@ STATIC_URL = '/static/'
 
 
 REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'DEFAULT_PAGINATION_CLASS': 
+        'rest_framework.pagination.LimitOffsetPagination' 
+    ,
     'PAGE_SIZE': 10
 }
