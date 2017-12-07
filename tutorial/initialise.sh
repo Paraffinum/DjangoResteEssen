@@ -65,6 +65,7 @@ then
 fi
 
 echo "$prefix collectstatic"
+rm -f static
 rm -f tmp.db db.sqlite3
 rm -r snippets/migrations
 python manage.py collectstatic --noinput
